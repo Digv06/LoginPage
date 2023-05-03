@@ -3,7 +3,7 @@ from authlib.integrations.flask_client import OAuth
 import os
 
 app = Flask(__name__)
-app.secret_key = '\xfd{H\xe5<\x95\xf9\xe3\x96.5\xd1\x01O/< !\xd5\xa2\xa0\x9fR\xa1\xa8'
+app.secret_key = 'Enter_Your_Secret_Key'
 
 app.config['SERVER_NAME'] = 'localhost:5000'
 oauth = OAuth(app)
@@ -16,7 +16,7 @@ def index():
 
 @app.route('/google/')
 def google():
-    GOOGLE_CLIENT_ID = '135473536424-v7otkopfcclepepkthmq6ek017a0ivg3.apps.googleusercontent.com'
+    GOOGLE_CLIENT_ID = 'GOOGLE_CLIENT_ID'
     GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
     CONF_URL = 'https://accounts.google.com/.well-known/openid-configuration'
     oauth.register(
@@ -44,7 +44,7 @@ def google_auth():
 @app.route('/facebook/')
 def facebook():
     # Facebook Oauth Config
-    FACEBOOK_CLIENT_ID = '1008933716324564'
+    FACEBOOK_CLIENT_ID = 'FACEBOOK_CLIENT_ID'
     FACEBOOK_CLIENT_SECRET = os.environ.get('FACEBOOK_CLIENT_SECRET')
     oauth.register(
         name='facebook',
